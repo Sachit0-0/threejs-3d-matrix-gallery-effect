@@ -140,7 +140,8 @@ function init() {
 
     initTrackbarControls();
 
-    transform(targets.table, 2000);
+    transform(targets.grid, 2000);
+
 
     window.addEventListener('resize', onWindowResize, false);
 
@@ -224,24 +225,24 @@ function htmlElement(table, i) {
     return element;
 }
 
-function elementClickHandler(i){
+// function elementClickHandler(i){
 
-    transform(targets.table,1000);
+//     transform(targets.table,1000);
 
-    new TWEEN.Tween(targets.simple[i / 5].position)
-        .to({
-            x: 0,
-            y: 0,
-            z: 2500
-        }, Math.random() * 2000 + 2000)
-        .easing(TWEEN.Easing.Exponential.InOut)
-        .start();
+//     new TWEEN.Tween(targets.simple[i / 5].position)
+//         .to({
+//             x: 0,
+//             y: 0,
+//             z: 2500
+//         }, Math.random() * 2000 + 2000)
+//         .easing(TWEEN.Easing.Exponential.InOut)
+//         .start();
 
-    new TWEEN.Tween(this)
-        .to({}, 2000 * 2)
-        .onUpdate(render)
-        .start();
-}
+//     new TWEEN.Tween(this)
+//         .to({}, 2000 * 2)
+//         .onUpdate(render)
+//         .start();
+// }
 
 function tableLayout(table, index) {
 
@@ -316,6 +317,8 @@ function addHelixObject(helixVector, index) {
     targets.helix.push(object);
 }
 
+
+// to control grid layout
 function addGridObject(index) {
 
     let object = new THREE.Object3D();
